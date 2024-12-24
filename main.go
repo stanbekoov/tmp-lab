@@ -2,13 +2,11 @@ package main
 
 import (
 	"fmt"
-	"lab2-client/input"
-	"lab2-client/req"
 	"time"
 )
 
 func main() {
-	json, ok := req.GetCurrent()
+	json, ok := GetCurrent()
 	if !ok {
 		return
 	}
@@ -17,12 +15,12 @@ func main() {
 
 	start := time.Now()
 
-	input.Read()
+	Read()
 	secs := int(time.Since(start).Seconds())
 	launch++
 	seconds += secs
 
 	fmt.Println(launch, seconds)
 
-	req.Update(launch, seconds)
+	Update(launch, seconds)
 }

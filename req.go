@@ -1,4 +1,4 @@
-package req
+package main
 
 import (
 	"bytes"
